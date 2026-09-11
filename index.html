@@ -34,33 +34,16 @@
 </a-assets>
  
   <!-- EL objeto: una entidad que carga y muestra el modelo -->
+
 <a-entity
-    gltf-model="#vivi_ornit"
-    animation-mixer="clip: *; loop: repeat"
-    position="0 1.5 -4"
-    scale="0.01 0.01 0.01"
-    rotation="0 0 0">
-<!-- gltf-model="#vivi_ornit"  = usa el modelo que precargamos arriba (el # apunta a su id)
-         animation-mixer          = REPRODUCE LA ANIMACIÓN (el aleteo)
-             · clip: *            = reproduce todas las animaciones que tenga el modelo
-             · loop: repeat       = las repite en bucle infinito
-         position="0 1.5 -4"      = ubicación (X=izq/der, Y=altura, Z=cerca/lejos).
-                                    El -4 lo pone 4 metros frente a ti; Y=1.5 a la altura de la vista
-         scale="1 1 1"            = tamaño (1 = original). Súbelo o bájalo si sale gigante/diminuto
-         rotation="0 0 0"         = giro en grados (X, Y, Z). El del medio lo gira horizontalmente -->
+gltf-model="#vivi_ornit"
+animation-mixer="clip: *; loop: repeat"
+animation__giro="property: rotation; to: 0 360 0; loop: true; dur: 10000; easing: linear"
+animation__flotar="property: position; from: 0 1.5 -4; to: 0 2.2 -4; dir: alternate; loop: 
+true; dur: 3000; easing: easeInOutSine"
+scale="0.01 0.01 0.01">
 </a-entity>
 
- <a-entity
-    gltf-model="#vivi_ornit"
-    animation-mixer="clip: *; loop: repeat"
-    animation="property: rotation; to: 0 360 0; loop: true; dur: 10000">
-</a-entity>
-
- <a-entity
-    gltf-model="#vivi_ornit"
-    animation-mixer="clip: *; loop: repeat"
-    animation="property: position; from: 0 1.5 -4; to: 0 2.5 -4; dir: alternate; loop: true; dur: 3000">
-</a-entity>
  
   <!-- LUCES: los modelos glTF necesitan luz para verse; sin esto salen negros o planos -->
 <a-light type="ambient" intensity="0.9"></a-light>
