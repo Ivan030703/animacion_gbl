@@ -49,6 +49,12 @@
          scale="1 1 1"            = tamaño (1 = original). Súbelo o bájalo si sale gigante/diminuto
          rotation="0 0 0"         = giro en grados (X, Y, Z). El del medio lo gira horizontalmente -->
 </a-entity>
+
+ <a-entity
+    gltf-model="#fenghuang"
+    animation-mixer="clip: *; loop: repeat"
+    animation="property: rotation; to: 0 360 0; loop: true; dur: 10000">
+</a-entity>
  
   <!-- LUCES: los modelos glTF necesitan luz para verse; sin esto salen negros o planos -->
 <a-light type="ambient" intensity="0.9"></a-light>
